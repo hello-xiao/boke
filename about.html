@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/about.css"/>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title>个人简介</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<style type="text/css">
+			/* body,.container{background-color: gray} */
+			/*   a{color:#FFF} */
+			.box{
+			width: 1000px;
+			margin: 0 auto;
+			border-left: #d2d2d2 1px solid;
+			border-right: #d2d2d2 1px solid;	
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+
+				//关于导航页面的下拉动画实现效果
+				$(".menu>li").mouseenter(function() {
+					var $sub = $(this).children(".sub");
+					$sub.stop();
+					$sub.slideDown(500);
+				});
+				$(".menu>li").mouseleave(function() {
+					var $sub = $(this).children(".sub");
+					$sub.stop();
+					$sub.slideUp(500);
+				});
+			});
+			
+			//图片滚动效果
+			    $(function () {
+			        var offset = 0;
+			        //让图片滚动起来
+			        var timer;
+			        function autoPlay(){
+			            timer = setInterval(function () {
+			                offset += -10;
+			                if(offset <= -1800){
+			                    offset = 0;
+			                }
+			                $(".mix").css("marginLeft", offset);
+			            }, 50);
+			        }
+			        autoPlay();
+			
+			       // li的移入和移出事件
+			        $(".mix>li").hover(function () {
+			            clearInterval(timer);
+			            $(this).siblings().fadeTo(100, 0.5);
+			            $(this).fadeTo(100, 1);
+			        }, function () {
+			            autoPlay();
+			            $(".mix>li").fadeTo(100, 1);
+			        });
+			    });
+				
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div class="headtop"></div>
+				<div class="contenttop">
+					<div class="logo f_l">聆听zhe</div>
+					<div class="search f_r">
+						<form action="index.php" method="post" name="searchform" id="searchform">
+							<input name="keyboard" id="keyboard" class="input_text" placeholder="请输入关键字" value="" style="color: rgb(153, 153, 153);">
+							<input name="Submit" class="input_submit" value="搜索" type="submit">
+						</form>
+					</div>
+					<div class="blank"></div>
+
+
+					<nav>
+						<div class="navigation">
+							<ul class="menu">
+								<li><a href="forum.html">网站首页</a></li>
+								<li><a href="#">关于我</a>
+									<ul class="sub">
+										<li><a href="about.html">个人简介</a></li>
+										<li><a href="listpic.html">个人相册</a></li>
+									</ul>
+								</li>
+								<li><a href="myself.html">我的日记</a>
+									<ul class="sub">
+										<li><a href="newslistpic.html">个人日记</a></li>
+										<li><a href="studylistpic.html">学习笔记</a></li>
+										<li><a href="songslistpic.html">好歌推荐</a></li>
+										<li><a href="bookslistpic.html">读书笔记</a></li>
+									</ul>
+								</li>
+								<li><a href="newslistpic.html">技术文章</a>
+									<ul class="sub">
+										<li><a href="">Java</a></li>
+										<li><a href="">Web前端</a></li>
+										<li><a href="">python</a></li>
+										<li><a href="">C语言</a></li>
+									</ul>
+								</li>
+								<li><a href="leavingmessage.html">给我留言</a> </li>
+							</ul>
+						</div>
+					</nav>
+
+				</div>
+			</header>
+			<div class="jztop"></div>
+			<!-- 主体区 -->
+			<div class="container">
+				<div class="container">
+					<div class="demo">
+						<style type="text/css">
+							.snowwrap,
+							.snow-container {
+								position: fixed;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								pointer-events: none;
+								z-index: 100001;
+							}
+						</style>
+						<div class="snowwrap">
+							<div class="snow-container"></div>
+						</div>
+						<script type="text/javascript" src="js/jquery.min.js"></script>
+						<script type="text/javascript" src="js/snow.js"></script>
+					</div>
+				</div>
+				<script type="text/javascript" src="http://shouce.ren/static/ad/gg.js"></script>
+			</div>
+			<div class="box">
+				<h2 class="nh1"><span>您现在的位置是：<a href="/" target="blank">网站首页</a>>><a href="#" target="_blank">个人简介</a></span><b>个人简介</b></h2>
+			
+			        <div class="f_box">
+			          <p class="a_title">个人简介</p>
+			          <p class="p_title"></p>
+			           <p class="box_p"><span>发布时间：2019-12-26 15:12:42</span><span>作者：聆听zhe</span><span>来源：个人博客</span><span>点击：111056</span></p>
+			          <!-- 可用于内容模板 --> 
+			        </div>
+			        <ul class="about_content">
+			          <p> 人生就是一个得与失的过程，而我却是一个幸运者，得到的永远比失去的多。....</p>
+					</ul>  
+					  <div class="max">
+						  <ul class="mix">
+							  <li><img src="images/ge.jpg" alt=""></li>
+							  <li><img src="images/ren.jpg" alt=""></li>
+							  <li><img src="images/jian.jpg" alt=""></li>
+							  <li><img src="images/jie.jpg" alt=""></li>
+							  <li><img src="images/ge.jpg" alt=""></li>
+							  <li><img src="images/ren.jpg" alt=""></li>
+						  </ul>
+					  </div>
+					  <div class="wenzi">
+			            <p>我希望有个如你一般的人。</p>
+						<p>如这山间清晨一般明亮清爽的人，</p>
+						<p>如奔赴古城道路上阳光一般的人，</p>
+						<p>温暖而不炙热，覆盖我所有肌肤。</p>
+						<p>由起点到夜晚，由山野到书房，</p>
+					    <p> 一切问题的答案都很简单。</p>
+					    <p> 我希望有个如你一般的人，贯彻未来，数遍生命的公路牌。</p>
+			        </div>
+					<div class="jieshao">
+						<p>在将来的时间里希望自己能更加的去学习努力完善这个博客网站运用自己所学实现自己个人博客网站的搭建，将这个博客网站做到能更好的运营和使用。</p>
+					</div>
+			</div>
+			
+			<div class="jzend"></div>
+			<div class="page">
+				<a href="javascript:;">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+			</div>
+			<!-- footer开始 -->
+			<footer>
+				<div class="footer">
+					<div class="f_l">
+						<p>18PHP一班&nbsp;<a href="">&nbsp;奥利给，干就完事了</a> </p>
+					</div>
+					<div class="f_r textr">
+						<p>简单制作有待加强</p>
+					</div>
+				</div>
+			</footer>
+			<!-- footer结束 -->
+
+		</div>
+	</body>
+</html>
